@@ -12,7 +12,7 @@ import com.example.words.fragments.LoginFragment;
 public class MainActivity extends AppCompatActivity {
 
     Button btnRegister;
-//jkc
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

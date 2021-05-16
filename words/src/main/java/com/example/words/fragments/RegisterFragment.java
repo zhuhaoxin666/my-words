@@ -94,8 +94,8 @@ public class RegisterFragment extends Fragment {
                     //获取宿主Activity的FragmentManager的FragmentTransaction
                     FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     //将MainActivity的fragment换为注册界面的fragment
-                    fragmentTransaction.replace(R.id.loginLayout, new LoadingFragment());
-                    fragmentTransaction.commit();
+//                    fragmentTransaction.replace(R.id.loginLayout, new LoadingFragment());
+//                    fragmentTransaction.commit();
 
                 }
             }
