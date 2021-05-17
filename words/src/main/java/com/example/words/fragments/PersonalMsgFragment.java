@@ -117,6 +117,8 @@ public class PersonalMsgFragment extends Fragment {
                             handler.sendMessage(message);
 
 
+
+
                         }
                     });
 

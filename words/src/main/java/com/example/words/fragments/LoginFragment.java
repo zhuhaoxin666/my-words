@@ -2,8 +2,10 @@ package com.example.words.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.Message;
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -41,6 +44,7 @@ public class LoginFragment extends Fragment {
     Button btnLogin;
     EditText username;
     EditText password;
+    CheckBox checkBox;
 
     @Nullable
     @Override
@@ -54,6 +58,20 @@ public class LoginFragment extends Fragment {
         //获取 用户名EditText和 密码EditText
         username = view.findViewById(R.id.loginUsername);
         password = view.findViewById(R.id.loginPassword);
+
+
+        //获取checkBox
+        checkBox = view.findViewById(R.id.checkBox);
+
+
+        //获取之前存取的用户信息
+        SharedPreferences userInfo = getActivity().getSharedPreferences("keyword",Context.MODE_PRIVATE);
+        String storeName = userInfo.getString("storeName", "");
+        String storePWD = userInfo.getString("storePWD", "");
+
+        //设置之前记住的用户名和密码
+        username.setText(storeName);
+        password.setText(storePWD);
 
 
         //设置登录监听
@@ -115,6 +133,10 @@ public class LoginFragment extends Fragment {
                             Call call = okHttpClient.newCall(request);
                             Response response;
                             try {
+
+
+
+
                                 response = call.execute();
 //                                Log.e("________HTTP-RESPONSE_________", String.valueOf(response.body().string()));
 
@@ -130,6 +152,18 @@ public class LoginFragment extends Fragment {
 
 
                                 if (code == 200) {
+
+                                    //记住密码
+                                    if(checkBox.isChecked()){
+                                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("keyword", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("storeName",usernameStr);
+                                        editor.putString("storePWD",passwordStr);
+                                        editor.commit();
+                                    }
+
+
+
                                     Log.e("________Status_________", status.getMessage());
                                     Log.e("________Status_________", status.getName());
 
@@ -139,6 +173,7 @@ public class LoginFragment extends Fragment {
                                     bundle.putString("username",status.getName());
                                     intent.putExtras(bundle);
                                     startActivity(intent);
+                                    getActivity().finish();
 
                                 } else if(code == 400){
                                     //弹出提示框对话框，提示输入密码或用户名错误

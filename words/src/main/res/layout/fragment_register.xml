@@ -28,12 +28,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="13dp"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:ems="10"
         android:hint="请确认密码"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/registerConfirm"
+        app:layout_constraintBottom_toTopOf="@+id/registerAge"
         app:layout_constraintStart_toStartOf="@+id/registerPassword"
         app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
 
@@ -41,20 +41,20 @@
         android:id="@+id/registerConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="20dp"
         android:text="注册"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassConfirm" />
+        app:layout_constraintTop_toBottomOf="@+id/registerMotto" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="106dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,5 +74,31 @@
         app:layout_constraintBottom_toTopOf="@+id/registerPassConfirm"
         app:layout_constraintEnd_toEndOf="@+id/registerName"
         app:layout_constraintTop_toBottomOf="@+id/registerName" />
+
+    <EditText
+        android:id="@+id/registerAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:drawableLeft="@drawable/ic_baseline_accessibility_new_24"
+        android:hint="请输入您的年龄"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/registerMotto"
+        app:layout_constraintStart_toStartOf="@+id/registerPassConfirm"
+        app:layout_constraintTop_toBottomOf="@+id/registerPassConfirm" />
+
+    <EditText
+        android:id="@+id/registerMotto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/ic_baseline_looks_24"
+        android:ems="10"
+        android:hint="个性签名"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/registerConfirm"
+        app:layout_constraintStart_toStartOf="@+id/registerAge"
+        app:layout_constraintTop_toBottomOf="@+id/registerAge" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,76 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputWords"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="sans-serif-black"
-        android:hint="请输入您想要存储的单词"
-        android:textAllCaps="false"
-        android:textStyle="italic"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textInputMeaning"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputMeaning"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="sans-serif-black"
-        android:hint="请输入该词的解释"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/inputBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textInputWords" />
-
     <Button
-        android:id="@+id/inputBtn"
+        android:id="@+id/recodeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="365dp"
-        android:backgroundTint="#00BCD4"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#BF9696"
         android:fontFamily="sans-serif-black"
         android:text="提交"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recodeMeaning"
+        app:layout_constraintTop_toBottomOf="@+id/recodeMeaning" />
+
+    <EditText
+        android:id="@+id/recodeMeaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="60dp"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="请输入该单词的解释"
+        android:inputType="textPersonName"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputMeaning" />
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/recodeWord" />
+
+    <EditText
+        android:id="@+id/recodeWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="60dp"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="请输入您想要存储的单词"
+        android:inputType="textPersonName"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="36dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="146dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="42dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/textInputWords"
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="62dp"
+        app:layout_constraintBottom_toTopOf="@+id/recodeWord"
+        app:layout_constraintEnd_toStartOf="@+id/recodeWord"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recodeWord"
         app:srcCompat="@drawable/word" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="37dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="457dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputMeaning"
+        android:id="@+id/imageView9"
+        android:layout_width="0dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/recodeMeaning"
+        app:layout_constraintEnd_toStartOf="@+id/recodeMeaning"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/recodeMeaning"
         app:srcCompat="@drawable/meaning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
